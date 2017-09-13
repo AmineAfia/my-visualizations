@@ -1,0 +1,38 @@
+{
+    "angular": [
+        {
+            "community": 8,
+            "documentation": 1,
+            "learning curve": 1,
+            "testability": 9,
+            "flexibility": 2,
+            "performance": 8,
+            "web standards": 5,
+            "existing work": 5
+        }
+    ],
+    "react": [
+        {
+            "community": 9,
+            "documentation": 6,
+            "learning curve": 1,
+            "testability": 9,
+            "flexibility": 9,
+            "performance": 9,
+            "web standards": 2,
+            "existing work": 9
+        }
+    ],
+    "aurelia": [
+        {
+            "community": 1,
+            "documentation": 9,
+            "learning curve": 9,
+            "testability": 9,
+            "flexibility": 2,
+            "performance": 8,
+            "web standards": 9,
+            "existing work": 2
+        }
+    ]
+}

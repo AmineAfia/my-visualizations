@@ -9,7 +9,7 @@ months = mdates.MonthLocator()  # every month
 yearsFmt = mdates.DateFormatter('%Y')
 
 # ----------------------Data formating------------------------------
-with open('pr_plot/prs_2.json') as data_file:  # load json file
+with open('issues_closed_plot/issues_closed.json') as data_file:  # load json file
     data = json.load(data_file)
 
 angular_df = pd.DataFrame(data["angular"])
@@ -36,7 +36,7 @@ aurelia_df["date"] = pd.to_datetime(sorted(aurelia_df["date"]))
 plt.figure(1)
 plt.subplot(111)
 plt.figure(1).autofmt_xdate()
-plt.ylabel('pull requests')
+plt.ylabel('closed issues')
 plt.xlabel('date')
 # plt.plot(angular_df["date"], angular_df["value"], color="r", label="Angular")
 plt.plot_date(angular_df["date"], angular_df["value"], '-r', label="Angular", lw=0.8)
@@ -53,7 +53,7 @@ plt.plot_date(react_df["date"], react_df["value"], '-b', label="React", lw=0.8)
 plt.figure(1)
 plt.subplot(111)
 plt.figure(1).autofmt_xdate()
-plt.title('pull requests over time')
+plt.title('closed issues over time')
 # plt.plot(aurelia_df["date"], aurelia_df["value"], color="m", label="Aurelia")
 plt.plot_date(aurelia_df["date"], aurelia_df["value"], '-m', label="Aurelia", lw=0.8)
 # ------------------------------------------------------------

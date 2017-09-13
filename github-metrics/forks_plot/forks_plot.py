@@ -9,7 +9,7 @@ years = mdates.YearLocator()   # every year
 months = mdates.MonthLocator()  # every month
 yearsFmt = mdates.DateFormatter('%Y')
 # ----------------Data formating-------------------------
-with open('issues_open_plot/issues.json') as data_file:
+with open('forks_plot/forks.json') as data_file:
     data = json.load(data_file)
 
 angular_df = pd.DataFrame(data["angular"])
@@ -26,7 +26,7 @@ aurelia_df["date"]  = pd.to_datetime(aurelia_df["date"])
 plt.figure(1)
 plt.subplot(111)
 plt.figure(1).autofmt_xdate()
-plt.ylabel('oppened issue')
+plt.ylabel('forks')
 plt.xlabel('date')
 plt.plot(angular_df["date"], angular_df["value"], color="r", label="Angular")
 # ------------------------------------------------------------
@@ -42,7 +42,7 @@ plt.plot(react_df["date"], react_df["value"], color="b", label="React")
 plt.figure(1)
 plt.subplot(111)
 plt.figure(1).autofmt_xdate()
-plt.title('Opened issues aggragation over time')
+plt.title('Forks aggragation over time')
 plt.plot(aurelia_df["date"], aurelia_df["value"], color="m", label="Aurelia")
 # ------------------------------------------------------------
 
@@ -50,9 +50,9 @@ plt.plot(aurelia_df["date"], aurelia_df["value"], color="m", label="Aurelia")
 plt.subplot(111).xaxis.set_major_locator(years)
 plt.subplot(111).xaxis.set_major_formatter(yearsFmt)
 plt.subplot(111).xaxis.set_minor_locator(months)
-# datemin = datetime.date(angular_df["date"].min().year, 1, 1)
-# datemax = datetime.date(angular_df["date"].max().year + 1, 1, 1)
-# plt.subplot(111).set_xlim(datemin, datemax)
+datemin = datetime.date(angular_df["date"].min().year, 1, 1)
+datemax = datetime.date(angular_df["date"].max().year + 1, 1, 1)
+plt.subplot(111).set_xlim(datemin, datemax)
 
 # format the coords message box
 def price(x):
