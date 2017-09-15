@@ -46,7 +46,7 @@ plt.plot_date(angular_df["date"], angular_df["value"], '-r', label="Angular", lw
 plt.figure(1)
 plt.subplot(111)
 plt.figure(1).autofmt_xdate()
-plt.plot_date(react_df["date"], react_df["value"], '-b', label="React", lw=0.8)
+plt.plot_date(react_df["date"], react_df["value"], '#5A9CC4', linestyle='-', label="React", lw=0.8)
 # ------------------------------------------------------------
 
 # ---------------------------Aurelia--------------------------
@@ -54,8 +54,7 @@ plt.figure(1)
 plt.subplot(111)
 plt.figure(1).autofmt_xdate()
 plt.title('closed issues over time')
-# plt.plot(aurelia_df["date"], aurelia_df["value"], color="m", label="Aurelia")
-plt.plot_date(aurelia_df["date"], aurelia_df["value"], '-m', label="Aurelia", lw=0.8)
+plt.plot_date(aurelia_df["date"], aurelia_df["value"], '#D075D4', linestyle='-', label="Aurelia", lw=0.8)
 # ------------------------------------------------------------
 
 # format the ticks

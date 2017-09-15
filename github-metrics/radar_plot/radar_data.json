@@ -8,7 +8,7 @@
             "flexibility": 2,
             "performance": 8,
             "web standards": 5,
-            "existing work": 5
+            "ecosystem": 5
         }
     ],
     "react": [
@@ -20,7 +20,7 @@
             "flexibility": 9,
             "performance": 9,
             "web standards": 2,
-            "existing work": 9
+            "ecosystem": 9
         }
     ],
     "aurelia": [
@@ -32,7 +32,7 @@
             "flexibility": 2,
             "performance": 8,
             "web standards": 9,
-            "existing work": 2
+            "ecosystem": 2
         }
     ]
 }

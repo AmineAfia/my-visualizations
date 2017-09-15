@@ -28,14 +28,14 @@ plt.subplot(111)
 plt.figure(1).autofmt_xdate()
 plt.ylabel('oppened issue')
 plt.xlabel('date')
-plt.plot(angular_df["date"], angular_df["value"], color="r", label="Angular")
+plt.plot_date(angular_df["date"], angular_df["value"], 'r', linestyle='-', label="Angular")
 # ------------------------------------------------------------
 
 # -----------------------React----------------------------
 plt.figure(1)
 plt.subplot(111)
 plt.figure(1).autofmt_xdate()
-plt.plot(react_df["date"], react_df["value"], color="b", label="React")
+plt.plot_date(react_df["date"], react_df["value"], '#5A9CC4', linestyle='-', label="React")
 # ------------------------------------------------------------
 
 # ----------------------Aurelia------------------------------
@@ -43,7 +43,7 @@ plt.figure(1)
 plt.subplot(111)
 plt.figure(1).autofmt_xdate()
 plt.title('Opened issues aggragation over time')
-plt.plot(aurelia_df["date"], aurelia_df["value"], color="m", label="Aurelia")
+plt.plot_date(aurelia_df["date"], aurelia_df["value"], '#D075D4', linestyle='-', label="Aurelia")
 # ------------------------------------------------------------
 
 # format the ticks

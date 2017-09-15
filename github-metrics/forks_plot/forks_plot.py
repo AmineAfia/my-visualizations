@@ -28,14 +28,14 @@ plt.subplot(111)
 plt.figure(1).autofmt_xdate()
 plt.ylabel('forks')
 plt.xlabel('date')
-plt.plot(angular_df["date"], angular_df["value"], color="r", label="Angular")
+plt.plot_date(angular_df["date"], angular_df["value"], 'r', linestyle='-', label="Angular")
 # ------------------------------------------------------------
 
 # -----------------------React----------------------------
 plt.figure(1)
 plt.subplot(111)
 plt.figure(1).autofmt_xdate()
-plt.plot(react_df["date"], react_df["value"], color="b", label="React")
+plt.plot_date(react_df["date"], react_df["value"], '#5A9CC4', linestyle='-', label="React")
 # ------------------------------------------------------------
 
 # ----------------------Aurelia------------------------------
@@ -43,16 +43,13 @@ plt.figure(1)
 plt.subplot(111)
 plt.figure(1).autofmt_xdate()
 plt.title('Forks aggragation over time')
-plt.plot(aurelia_df["date"], aurelia_df["value"], color="m", label="Aurelia")
+plt.plot_date(aurelia_df["date"], aurelia_df["value"], '#D075D4', linestyle='-', label="Aurelia")
 # ------------------------------------------------------------
 
 # format the ticks
 plt.subplot(111).xaxis.set_major_locator(years)
 plt.subplot(111).xaxis.set_major_formatter(yearsFmt)
 plt.subplot(111).xaxis.set_minor_locator(months)
-datemin = datetime.date(angular_df["date"].min().year, 1, 1)
-datemax = datetime.date(angular_df["date"].max().year + 1, 1, 1)
-plt.subplot(111).set_xlim(datemin, datemax)
 
 # format the coords message box
 def price(x):

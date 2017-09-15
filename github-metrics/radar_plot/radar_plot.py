@@ -24,7 +24,7 @@ fig = plt.figure()
 ax = fig.add_subplot(131, projection="polar")
 
 theta = np.arange(len(angular_df))/float(len(angular_df))*2.*np.pi
-l2, = ax.plot(theta, angular_df[0], color="r", lw=0.9, label="Angular")
+l2, = ax.plot(theta, angular_df[0], '-r', lw=0.9, label="Angular")
 ax.fill(theta, angular_df[0], facecolor="r", alpha=0.25, label="")
 
 def _closeline(line):
@@ -42,8 +42,8 @@ plt.legend()
 ax1 = fig.add_subplot(132, projection="polar")
 
 theta = np.arange(len(react_df[0]))/float(len(react_df[0]))*2.*np.pi
-l1, = ax1.plot(theta, react_df[0], color="b", lw=0.9, label="React")
-ax1.fill(theta, react_df[0], facecolor="b", alpha=0.25, label="")
+l1, = ax1.plot(theta, react_df[0], '#5A9CC4', lw=0.9, label="React")
+ax1.fill(theta, react_df[0], facecolor="#5A9CC4", alpha=0.25, label="")
 [_closeline(l) for l in [l1]]
 
 ax1.set_xticks(theta)
@@ -55,8 +55,8 @@ plt.legend()
 ax2 = fig.add_subplot(133, projection="polar")
 
 theta = np.arange(len(aurelia_df))/float(len(aurelia_df))*2.*np.pi
-l3, = ax2.plot(theta, aurelia_df[0], color="m", lw=0.9, label="Aurelia")
-ax2.fill(theta, aurelia_df[0], facecolor="m", alpha=0.25, label="")
+l3, = ax2.plot(theta, aurelia_df[0], color='#D075D4', lw=0.9, label="Aurelia")
+ax2.fill(theta, aurelia_df[0], facecolor="#D075D4", alpha=0.25, label="")
 [_closeline(l) for l in [l3]]
 
 ax2.set_xticks(theta)

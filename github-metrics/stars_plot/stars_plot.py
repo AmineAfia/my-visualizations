@@ -18,6 +18,12 @@ angular_df["date"] = pd.to_datetime(angular_df["date"])
 react_df = pd.DataFrame(data["react"])
 react_df["date"] = pd.to_datetime(react_df["date"])
 
+react1_df = pd.DataFrame(data["react1"])
+react1_df["date"] = pd.to_datetime(react1_df["date"])
+
+react2_df = pd.DataFrame(data["react2"])
+react2_df["date"] = pd.to_datetime(react2_df["date"])
+
 aurelia_df = pd.DataFrame(data["aurelia"])
 aurelia_df["date"] = pd.to_datetime(aurelia_df["date"])
 # ------------------------------------------------------------
@@ -28,14 +34,24 @@ plt.subplot(111)
 plt.figure(1).autofmt_xdate()
 plt.ylabel('stars')
 plt.xlabel('date')
-plt.plot_date(angular_df["date"], angular_df["value"], '-r', label="Angular")
+plt.plot_date(angular_df["date"], angular_df["value"], 'r', linestyle='-', label="Angular")
 # ------------------------------------------------------------
 
 # -------------------------React-----------------------------
 plt.figure(1)
 plt.subplot(111)
 plt.figure(1).autofmt_xdate()
-plt.plot_date(react_df["date"], react_df["value"], '-b', label="React")
+plt.plot_date(react_df["date"], react_df["value"], '#5A9CC4', linestyle='-', label="React")
+
+# plt.figure(1)
+# plt.subplot(111)
+# plt.figure(1).autofmt_xdate()
+plt.plot_date(react1_df["date"], react1_df["value"], '#65B1DF', linestyle=':', label="")
+
+# plt.figure(1)
+# plt.subplot(111)
+# plt.figure(1).autofmt_xdate()
+plt.plot_date(react2_df["date"], react2_df["value"], '#5A9CC4', linestyle='-', label="")
 # ------------------------------------------------------------
 
 # -------------------------Aurelia---------------------------
@@ -43,7 +59,7 @@ plt.figure(1)
 plt.subplot(111)
 plt.figure(1).autofmt_xdate()
 plt.title('Stars aggragation over time')
-plt.plot_date(aurelia_df["date"], aurelia_df["value"], '-m', label="Aurelia")
+plt.plot_date(aurelia_df["date"], aurelia_df["value"], '#D075D4', linestyle='-', label="Aurelia")
 # ------------------------------------------------------------
 
 # format the ticks
@@ -51,9 +67,9 @@ plt.subplot(111).xaxis.set_major_locator(years)
 plt.subplot(111).xaxis.set_major_formatter(yearsFmt)
 plt.subplot(111).xaxis.set_minor_locator(months)
 
-datemin = datetime.date(aurelia_df["date"].min().year, 1, 1)
-datemax = datetime.date(aurelia_df["date"].max().year + 1, 1, 1)
-plt.subplot(111).set_xlim(datemin, datemax)
+# datemin = datetime.date(aurelia_df["date"].min().year, 1, 1)
+# datemax = datetime.date(aurelia_df["date"].max().year + 1, 1, 1)
+# plt.subplot(111).set_xlim(datemin, datemax)
 
 # format the coords message box
 def price(x):
