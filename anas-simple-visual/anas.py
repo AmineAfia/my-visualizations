@@ -1,3 +1,4 @@
+import inspect
 import json
 import datetime
 import matplotlib.dates as mdates
@@ -10,7 +11,7 @@ import numpy as np
 # ----------------------Data formating-----------------------
 with open('data.json') as data_file:
     data = json.load(data_file)
-data_df = pd.DataFrame(data["plot"])
+data_df = pd.DataFrame(data["plot1"])
 
 temp = data_df["temp"]
 freq = data_df["freq"]
@@ -20,17 +21,17 @@ freq_smooth = spline(temp, freq, new_temp)
 # ------------------------------------------------------------
 
 # -----------------------Plot-------------------------------
-
 plt.ylabel('freq')
 plt.xlabel('temp')
 plt.suptitle('Frequency Shift', fontsize=15)
 
-plt.plot(new_temp, freq_smooth)
-plt.plot(temp, freq, 'o', color='c')
-plt.fill_between(data_df["temp"], -550, data_df["freq"], alpha=0)
+plt.plot(new_temp, freq_smooth, color='r')
+plt.plot(temp, freq, 'o', color='r')
+plt.fill_between(data_df["temp"], -400, data_df["freq"], alpha=0)
 plt.grid(True)
+plt.xlim(xmin=14.8)
 
 # ------------------------------------------------------------
-
-plt.savefig("plot.png")
+photo_name = inspect.stack()[0][1].strip('.py') + '.png'
+plt.savefig(photo_name)
 plt.show()
